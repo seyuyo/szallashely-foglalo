@@ -1,0 +1,114 @@
+@media screen and (min-width: 768px) {
+  h2 {
+    display: none;
+  }
+  h1 {
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+  .user-card {
+    display: none;
+  }
+  .title, .user-container {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  table {
+    box-shadow: #4a4a4a 0 0 10px;
+    border-radius: 20px;
+    width: 80%;
+  }
+
+  .reserved-containers {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .reserved-containers > table {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .reserved-containers > h1 {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  th {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    vertical-align: center;
+    horiz-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  td {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+    vertical-align: center;
+    horiz-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  h2 {
+    display: flex;
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin: 20px auto 20px auto;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    display: none;
+  }
+
+  .user-container, .reserved-containers {
+    display: none;
+  }
+  .card-container {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+
+  .mat-mdc-card-header {
+    text-align: center!important;
+    justify-content: center!important;
+    align-items: center!important;
+    margin: auto auto 15px auto!important;
+
+  }
+
+  .user-card {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #212529;
+    color: #FFFFFF;
+    border-radius: 20px;
+    text-align: center;
+  }
+  button {
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    margin: 20px auto!important;
+    justify-content: center!important;
+    align-items: center!important;
+  }
+}

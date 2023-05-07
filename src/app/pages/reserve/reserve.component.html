@@ -1,0 +1,47 @@
+<div class="reserve-container" >
+  <table class="table table-info">
+    <thead>
+    <tr>
+      <th>Hotel neve</th>
+      <th>Szoba</th>
+      <th>Város</th>
+      <th>Cím</th>
+      <th>Szoba száma</th>
+      <th>Ár/Éj</th>
+      <th>Műveletek</th> <!-- Új oszlop a gomb számára -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{reserve.hotel.hotelName}}</td>
+      <td>{{reserve.room.roomName}}</td>
+      <td>{{reserve.hotel.hotelCity}}</td>
+      <td>{{reserve.hotel.hotelAddress}}</td>
+      <td>{{reserve.room.roomNumber}}</td>
+      <td>{{reserve.room.roomPrice}}</td>
+      <td>
+        <button mat-raised-button color="primary" (click)="onConfirm()">
+          Foglalás megerősítése
+        </button>
+      </td> <!-- Új cella a gomb számára -->
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="complex-query">
+  <div *ngIf="reservations.length > 0">
+    <h3>Foglalások listája:</h3>
+    <ul>
+      <li *ngFor="let reservation of reservations">
+        {{ reservation.hotel.hotelName }} - {{ reservation.checkIn }} - {{ reservation.checkOut }}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="reservations.length === 0">
+    <h3>Nincsenek foglalások ebben az időszakban.</h3>
+  </div>
+</div>
+
+

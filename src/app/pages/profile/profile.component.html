@@ -1,0 +1,136 @@
+<div class="title">
+  <h1>Profil</h1>
+</div>
+
+<div class="user-container">
+  <div *ngIf="user">
+    <table class="table table-striped table-dark">
+      <tr>
+        <th>Vezetéknév</th>
+        <th>Keresztnév</th>
+        <th>Email</th>
+        <th>Telefon</th>
+        <th>Szerkesztés</th>
+        <th>Törlés</th>
+      </tr>
+      <tr>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <div class="editButton">
+            <button class="btn btn-success" (click)="editUser()"
+                    [ngStyle]="{
+                                'background-color': bgColor,
+                                 'color': textColor,
+                                }"
+                    (mousemove)="onMouseMove($event)"
+                    (mouseenter)="onMouseEnter()"
+                    (mouseleave)="onMouseLeave()">
+              Szerkesztés
+            </button>
+          </div>
+        </td>
+        <td>
+          <div class="deleteButton">
+            <button class="btn btn-danger" (click)="deleteUser()">Törlés</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="card-container" *ngIf="user">
+  <h2>Profil adatok</h2>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <mat-card-title>Profil adatok</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{'Vezetéknév: ' | capitalizeFirstPipe}}{{user.lastname}}</p>
+      <p>{{'Keresztnév: ' | capitalizeFirstPipe}}: {{user.firstname}}</p>
+      <p>Email: {{user.email}}</p>
+      <p>Telefon: {{user.phone}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a>
+        <div class="editButton">
+          <button class="btn btn-success" (click)="editUser()">Szerkesztés</button>
+        </div>
+      </a>
+      <a>
+        <div class="deleteButton">
+          <button class="btn btn-danger" (click)="deleteUser()">Törlés</button>
+        </div>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="!user">
+  <h2>Nincs ilyen felhasználó</h2>
+</div>
+
+<div class="reserved-containers">
+  <h1>Foglalások</h1>
+  <table class="table table-striped table-dark" *ngFor="let reserve of reservations">
+    <thead>
+    <tr>
+      <th>Hotel neve</th>
+      <th>Hotel email</th>
+      <th>Szoba típusa</th>
+      <th>Szoba ára</th>
+      <th>Érkezés</th>
+      <th>Távozás</th>
+      <th>Foglalás törlése</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{reserve.hotelName}}</td>
+      <td>{{reserve.hotel.hotelEmail}}</td>
+      <td>{{reserve.room.roomName}}</td>
+      <td>{{reserve.room.roomPrice}}</td>
+      <td>{{reserve.checkIn}}</td>
+      <td>{{reserve.checkOut}}</td>
+      <td>
+        <button mat-raised-button color="warn" (click)="deleteReservation(reserve.id)">Törlés</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card-container" *ngFor="let reserve of reservations">
+  <h2>Foglalások</h2>
+  <mat-card class="user-card">
+    <mat-card-header>
+      <mat-card-title>Foglalások</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{'Hotel neve: ' | capitalizeFirstPipe}}{{reserve.hotelName}}</p>
+      <p>{{'Hotel email címe: ' | capitalizeFirstPipe}}: {{reserve.hotel.hotelEmail}}</p>
+      <p>{{'Szoba típusa: ' | capitalizeFirstPipe}}{{reserve.room.roomName}}</p>
+      <p>{{'Szoba ára: ' | capitalizeFirstPipe}}: {{reserve.room.roomPrice}}</p>
+      <p>{{'Érkezés: ' | capitalizeFirstPipe}}{{reserve.checkIn}}</p>
+      <p>{{'Távozás: ' | capitalizeFirstPipe}}: {{reserve.checkOut}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a>
+        <div class="delete-reservation">
+          <button mat-raised-button color="warn" (click)="deleteReservation(reserve.id)">Törlés</button>
+        </div>
+      </a>
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+
+

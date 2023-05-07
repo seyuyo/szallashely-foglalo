@@ -1,0 +1,80 @@
+<h1>Bejelentkezés</h1>
+
+
+<div class="login-container">
+  <!-- Az űrlap, amely az Angular Reactive Forms-t használja. Az [formGroup] direktívával a komponens FormGroup-jához kapcsolódik. -->
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <!-- Az Angular Material mat-form-field komponens használata az e-mail mezőhöz. Az [appearance] attribútummal állítható be a megjelenés módja (itt: "fill"). -->
+    <mat-form-field appearance="outline">
+      <!-- Az Angular Material mat-label komponens a mező címke szövegének megjelenítésére szolgál. -->
+      <mat-label>E-mail cím</mat-label>
+      <!-- Az Angular Material matInput komponens az input mező megjelenítésére szolgál. A formControlName direktívával a mező azonosítójához kapcsolódik a FormGroup-ban. A "required" attribútum a mező kötelező kitöltését jelzi. -->
+      <input matInput formControlName="email" required placeholder="email">
+      <!-- Az Angular Material mat-error komponens a mező hibáinak megjelenítésére szolgál. Az *ngIf direktívával ellenőrzi, hogy a mező hibás-e, és ha igen, megjeleníti a hibaüzenetet. -->
+      <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+        E-mail cím megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Az Angular Material mat-form-field komponens használata a jelszó mezőhöz. -->
+    <mat-form-field appearance="outline">
+      <mat-label>Jelszó</mat-label>
+      <input matInput type="password" formControlName="password" required placeholder="jelszó">
+      <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+        Jelszó megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+
+    <!-- A bejelentkezés gomb. A mat-raised-button komponens a gomb megjelenítésére szolgál, a [color] attribútummal pedig beállítható a gomb színe (itt: "primary"). A [disabled] attribútum a gomb letiltására szolgál addig, amíg a form nem érvényes. -->
+    <button mat-raised-button color="primary" type="submit">
+      Bejelentkezés
+    </button>
+  </form>
+</div>
+
+<h2 class="available-hotels-container-h2">Elérhető hotelek a(z) {{city}} városban, 50 000 Ft alatti áron éjszakánként</h2>
+<div class="available-hotels-container">
+  <table class="table table-striped table-dark">
+    <thead>
+    <tr>
+      <th>Hotel neve</th>
+      <th>Város</th>
+      <th>Cím</th>
+      <th>Telefonszám</th>
+      <th>Email</th>
+      <th>Ár éjszakánként</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hotel of hotels">
+      <td>{{hotel.hotelName}}</td>
+      <td>{{hotel.hotelCity}}</td>
+      <td>{{hotel.hotelAddress}}</td>
+      <td>{{hotel.hotelPhoneNumber}}</td>
+      <td>{{hotel.hotelEmail}}</td>
+      <td>{{hotel.pricePerNight}} Ft</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card-container">
+  <mat-card class="user-card">
+    <mat-card-header>
+      <mat-card-title>Elérhető hotelek a(z) {{city}} városban, 50 000 Ft alatti áron éjszakánként</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngFor="let hotel of hotels">
+      <p>{{'Hotel neve: ' | capitalizeFirstPipe}}{{hotel.hotelName}}</p>
+      <p>{{'Város: ' | capitalizeFirstPipe}}: {{hotel.hotelCity}}</p>
+      <p>{{'Cím: ' | capitalizeFirstPipe}}{{hotel.hotelAddress}}</p>
+      <p>{{'Telefonszám: ' | capitalizeFirstPipe}}: {{hotel.hotelPhoneNumber}}</p>
+      <p>{{'Email: ' | capitalizeFirstPipe}}{{hotel.hotelEmail}}</p>
+      <p>{{'Ár/éjszaka: ' | capitalizeFirstPipe}}: {{hotel.pricePerNight}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
+<script src="https://www.google.com/recaptcha/api.js"></script>

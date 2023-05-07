@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "szallashely-foglalo"
+  },
+  "targets": {
+    "szallashely-foglalo": {
+      "hosting": {
+        "szalloda-foglalas": [
+          "szallashely-foglalo"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+
+.header-img {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  display: flex;
+
+}
+
+.header-banner {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  opacity: 0.9;
+  border-radius: 30px;
+}
+
+form {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+
+
+}
+
+mat-form-field {
+  width: 10%;
+  margin: 0 10px 10px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  min-width: 200px;
+}
+
+mat-hint {
+  color: #fff;
+}
+
+mat-error {
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+mat-label {
+  color: #fff;
+  border-color: #fff;
+}
+
+input, mat-icon {
+  color: #fff;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+button {
+  background-color: #9c27b0 !important;
+  color: #9c27b0;
+  display: flex;
+  margin: 10px 10px 45px 10px;
+}
+
+@media screen and (max-width: 768px) {
+  form {
+    width: 60%;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+
+  mat-form-field {
+    display: block;
+    width: 100%;
+    padding: 10px 0 10px 0;
+    margin: 0 0 10px;
+  }
+
+  button {
+    margin: 10px 0 30px;
+  }
+  .hotel-list-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .table th,
+  .table td {
+    text-align: center;
+  }
+}
+
+.hotel-list-container {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+table {
+  border-radius: 20px;
+  box-shadow: black 0px 0px 20px;
+}
+
+th, td {
+  text-align: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+.card-container {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Meglévő mobil stílusok */
+
+  .table-responsive {
+    display: none;
+  }
+
+  .card-container {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .hotel-card {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #212529;
+    color: #FFFFFF;
+    border-radius: 20px;
+  }
+  button {
+    margin: 10px 0 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}

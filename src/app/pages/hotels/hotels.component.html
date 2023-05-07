@@ -1,0 +1,91 @@
+<body>
+  <div class="hotel-header-container">
+    <div class="hotel-header">
+      <div class="header-img">
+        <img class="header-banner" src="/assets/hotel-banner.jpg" alt="hotel_reserve">
+      </div>
+    </div>
+  </div>
+
+  <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Város</mat-label>
+      <input matInput formControlName="city" required placeholder="Város">
+      <mat-hint>Kitöltés kötelező</mat-hint>
+      <mat-error *ngIf="reservationForm.controls['city'].hasError('required')">
+        Város megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Check-in dátuma</mat-label>
+      <input matInput type="date" formControlName="checkIn" required>
+      <mat-icon fontIcon="calendar_month" matSuffix></mat-icon>
+      <mat-hint>*Kitöltés kötelező</mat-hint>
+      <mat-error *ngIf="reservationForm.controls['checkIn'].hasError('required')">
+        Check-in dátumának megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Check-out dátuma</mat-label>
+      <input matInput type="date" formControlName="checkOut" required>
+      <mat-hint>*Kitöltés kötelező</mat-hint>
+      <mat-error *ngIf="reservationForm.controls['checkOut'].hasError('required')">
+        Check-out dátumának megadása kötelező!
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit">Keresés</button>
+  </form>
+
+  <div class="hotel-list-container">
+    <div class="table-responsive">
+      <table class="table table-dark">
+        <thead>
+        <tr>
+          <th>Hotel neve</th>
+          <th>Város</th>
+          <th>Cím</th>
+          <th>Telefonszám</th>
+          <th>Email</th>
+          <th>Leírás</th>
+          <th>Ár/Éj</th>
+          <th>Foglalás</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hotel of hotels$ | async">
+          <td>{{hotel.hotelName}}</td>
+          <td>{{hotel.hotelCity}}</td>
+          <td>{{hotel.hotelAddress}}</td>
+          <td>{{hotel.hotelPhoneNumber}}</td>
+          <td>{{hotel.hotelEmail}}</td>
+          <td>{{hotel.hotelBio}}</td>
+          <td>{{ hotel.pricePerNight }}</td>
+          <td><button mat-raised-button color="succes" (click)="onReserve(hotel)">Szoba választás</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card-container" *ngFor="let hotel of hotels$ | async">
+      <mat-card class="hotel-card">
+        <mat-card-header>
+          <mat-card-title>{{hotel.hotelName}}</mat-card-title>
+          <mat-card-subtitle>{{hotel.hotelCity}}, {{hotel.hotelAddress}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{'telefonszám: ' | capitalizeFirstPipe}}{{hotel.hotelPhoneNumber}}</p>
+          <p>{{'email: ' | capitalizeFirstPipe}}: {{hotel.hotelEmail}}</p>
+          <p>{{'leírás: ' | capitalizeFirstPipe}}: {{hotel.hotelBio}}</p>
+          <p>Ár/Éj: {{hotel.pricePerNight}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="succes" (click)="onReserve(hotel)">
+            Szoba választás
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</body>

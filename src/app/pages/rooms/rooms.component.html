@@ -1,0 +1,40 @@
+
+<div class="room-container">
+  <mat-card class="mat-card" *ngFor="let room of rooms$ | async; let i = index;">
+    <img [src]="'/assets/rooms/' + imageList[i]">
+    <mat-card-content>
+      <mat-list *ngIf="i < 9" >
+        <mat-list-item >
+          <p class="room-name-title">{{ room.roomName }}</p>
+        </mat-list-item>
+        <mat-list-item >
+          <p class="room-number">Szoba szám: {{ room.roomNumber }}.</p>
+        </mat-list-item>
+        <mat-list-item >
+          <p class="room-bio">{{ room.roomBio }}</p>
+        </mat-list-item>
+        <mat-list-item >
+          <p class="room-price">{{ room.roomPrice }} / FŐ / ÉJSZAKA</p>
+        </mat-list-item>
+        <mat-list-item >
+          <p class="room-available" *ngIf="room.available" style="color: green">Elérhető</p>
+        </mat-list-item>
+        <mat-list-item >
+          <p class="room-available" *ngIf="!room.available" style="color: red">Nem elérhető</p>
+        </mat-list-item>
+      </mat-list>
+      <mat-card-actions>
+        <button *ngIf="room.available === true" mat-raised-button class="reserve-button"  (click)="onSelectRoom(room)">
+          Lefoglalom
+        </button>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<table>
+
+</table>
+
+
+

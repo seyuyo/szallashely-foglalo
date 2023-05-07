@@ -1,0 +1,82 @@
+h2 mat-option{
+  font-size: 1.3rem;
+  color: black!important;
+}
+.name {
+  font-size: 1.3rem;
+  color: black!important;
+}
+.mat-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 16px 20px;
+}
+
+.mat-card {
+  width: 30%;
+  margin-bottom: 20px;
+  background-color: burlywood;
+  border-radius: 20px;
+  margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.room-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 16px 20px;
+}
+
+.mat-mdc-card-header, .mat-mdc-card-content {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+img {
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .mat-card {
+    width: 100%;
+  }
+}
+
+#room-name-title {
+  color: #6f7bff;
+  font-size: 1.2rem;
+}
+
+button {
+  background-color: #9c27b0!important;
+}
+
+.room-bio {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Az adott sorok száma */
+  -webkit-box-orient: vertical;
+}
+
+.room-name-title {
+  color: #3944BC;
+  font-weight: bold;
+  font-size: 1.4rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.room-number, .room-price, .room-bio, .room-available {
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}

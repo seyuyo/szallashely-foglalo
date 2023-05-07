@@ -1,0 +1,66 @@
+<mat-toolbar>
+  <span class="main-para">
+    <mat-icon class="nav-icon" aria-hidden="false" aria-label="luggage icon" fontIcon="luggage"></mat-icon>
+    Szállás foglalás
+    <mat-icon class="nav-icons" aria-hidden="false" aria-label="luggage icon" fontIcon="luggage"></mat-icon>
+  </span>
+  <span class="example-spacer"></span>
+  <!-- navbar -->
+  <div class="mat-mdc-tab-nav-bar">
+    <a mat-button routerLink="/home" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home"></mat-icon>
+    </a>
+    <a mat-button routerLink="/hotels" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="hotel icon" fontIcon="apartment"></mat-icon>
+    </a>
+    <a mat-button routerLink="/rooms" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="room icon" fontIcon="bed"></mat-icon>
+    </a>
+    <a *ngIf="!(afAuth.user | async)" mat-button routerLink="/login" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="login"></mat-icon>
+    </a>
+    <a *ngIf="!(afAuth.user | async)" mat-button routerLink="/sign-up" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="person"></mat-icon>
+    </a>
+    <a *ngIf="(afAuth.user | async)" mat-button routerLink="/profile" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="person"></mat-icon>
+    </a>
+    <a *ngIf="(afAuth.user | async)" mat-button (click)="logout()" routerLink="/home" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="logout"></mat-icon>
+    </a>
+
+  </div>
+
+
+  <!-- mobile navbar -->
+  <div class="mobile-nav" color="primary">
+    <h3>Szállás foglalás</h3>
+  </div>
+  <!-- navbar -->
+  <div class="mat-mdc-tab-mobile-nav-bar">
+    <a mat-button routerLink="/home" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="home icon" fontIcon="home"></mat-icon>
+    </a>
+    <a mat-button routerLink="/hotels" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="hotel icon" fontIcon="apartment"></mat-icon>
+    </a>
+    <a mat-button routerLink="/rooms" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="room icon" fontIcon="bed"></mat-icon>
+    </a>
+    <a *ngIf="!(afAuth.user | async)" mat-button routerLink="/login" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="login icon" fontIcon="login"></mat-icon>
+    </a>
+    <a *ngIf="!(afAuth.user | async)" mat-button routerLink="/sign-up" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="person"></mat-icon>
+    </a>
+    <a *ngIf="(afAuth.user | async)" mat-button routerLink="/profile" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="person"></mat-icon>
+    </a>
+    <a *ngIf="(afAuth.user | async)" mat-button (click)="logout()" routerLink="/home" routerLinkActive="active">
+      <mat-icon aria-hidden="false" aria-label="logout icon" fontIcon="logout"></mat-icon>
+    </a>
+  </div>
+
+
+
+</mat-toolbar>

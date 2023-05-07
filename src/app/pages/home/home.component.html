@@ -1,0 +1,154 @@
+<!--
+   Ezután a home.component.html fájlban megadhatjuk az about komponens használatát,
+   és az @Input dekorátorral átadhatjuk az adatokat:
+-->
+
+<div class="welcome-card">
+  <h1 class="welcome-title">Üdvözlünk az oldalunkon!</h1>
+  <p class="welcome-text">Fedezd fel szállodáinkat, és tervezd meg a következő utazásodat velünk.</p>
+</div>
+
+<div class="title2">
+  <h2 class="popular-destinations-title">Legnépszerűbb üdülőhelyeink</h2>
+</div>
+
+<div class="mat-card-container">
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Hévíz hotel
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/heviz.jpg" alt="Hévíz">
+    <mat-card-content>
+      <p></p>
+      <p>22.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Siófok Marton Apartman
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/siofok.jpg" alt="Marton Apartman Siófok">
+    <mat-card-content>
+      <p></p>
+      <p>35.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Velence Resort Hotel
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/velence_resort.jpg" alt="Velence Resort">
+    <mat-card-content>
+      <p></p>
+      <p>28.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Villányi Borvidék Apartman
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/villanyi_borvidek.jpg" alt="Villányi borvidék">
+    <mat-card-content>
+      <p></p>
+      <p>45.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Inárcs Hotel
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/romantikus.jpg" alt="Inárcs Hotel">
+    <mat-card-content>
+      <p></p>
+      <p>60.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="mat-card">
+    <mat-card-header>
+      <mat-card-title>Hotel Európa
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+        <mat-icon fontIcon="star"></mat-icon>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="assets/hotel_europa.jpg" alt="Hotel Európa">
+    <mat-card-content>
+      <p></p>
+      <p>55.000 Ft/Fő/Éjszaka</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="(afAuth.user | async)" mat-raised-button routerLink="/hotels"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+
+      <button *ngIf="!(afAuth.user | async)" mat-raised-button routerLink="/sign-up"
+              routerLinkActive="active" class="reserve-button">Foglalja le most!</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

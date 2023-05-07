@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Szerkesztés</h1>
+<div mat-dialog-content>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Vezetéknév" [(ngModel)]="data.lastname" name="lastname">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Keresztnév" [(ngModel)]="data.firstname" name="firstname">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" [(ngModel)]="data.email" name="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Telefon" [(ngModel)]="data.phone" name="phone">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Mégse</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Mentés</button>
+</div>
