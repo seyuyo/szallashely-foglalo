@@ -1,6 +1,6 @@
 # szallashely-foglalo
 
-Üdv, ez a projekt az Szegedi Tudományegyetem, Webfejlesztési keretrendszerek kurzusra készült.
+Üdv, ez a projekt az Szegedi Tudományegyetem, Webfejlesztési keretrendszerek kurzusra készült Szállás-foglaló webalkalmazás.
 
 
 FONTOS, MINDENKÉPP OLVASD EL!
@@ -50,4 +50,27 @@ export interface DocumentChange<T> extends firebase.firestore.DocumentChange {
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
-Így már működnie kéne.
+Követelményeket hol találod:
+
+- Adatmodell definiálása (legalább 4 TypeScript interfész vagy class formájában (ugyanennyi kollekció)):
+  - src/app/shared/models
+
+- attribútum és struktúrális direktívák, materialok:
+  - bármelyik komponens html fájljában
+  
+- angular formok:
+  - src/app/pages/login vagy sign-up komponensben
+  
+- CRUD műveletek:
+  - src/app/shared/services fájlok
+  
+- pipe osztály:
+  - src/app/pipes
+  
+- route és authguard:
+  - src/app/app-routing.module.ts
+  
+- 2 kompley firestore lekérdezés:
+  - egyik a bejelentkező oldalon, másik a reserve oldalon találod 
+  
+ A többi talán evidens
