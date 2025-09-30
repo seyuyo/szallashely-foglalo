@@ -2,6 +2,31 @@
 
 Üdv, ez a projekt az Szegedi Tudományegyetem, Webfejlesztési keretrendszerek kurzusra készült Szállás-foglaló webalkalmazás.
 
+## Leírás
+
+A **Szálláshely-foglaló** alkalmazás célja, hogy a felhasználók keresni tudjanak különböző szálláshelyeket (pl. szállodák, apartmanok) adott dátumokra, és foglalásokat készíthessenek. Emellett kezelhetővé teszi a felhasználói foglalásokat, szállás adatokat, és biztosít felhasználói élményt mobilfelületen.
+
+## Funkciók
+
+- Szálláshelyek listázása és keresése hely, dátum és egyéb kritériumok alapján  
+- Szálláshely részletek megtekintése (ár, leírás, képek)  
+- Foglalás létrehozása adott szállással  
+- Felhasználói foglalások listázása, törlése vagy módosítása  
+- Felhasználói bejelentkezés / regisztráció (ha van)  
+- Admin felület (vagy admin funkciók) a szálláshelyek kezelésére (hozzáadás, módosítás, törlés)  
+- Érvényesítés: dátumok, foglaltság ellenőrzése, bemeneti adatok validálása  
+
+## Technológiák
+
+| Komponens | Használt technológia |
+|-----------|-------------------------|
+| Nyelv | Java |
+| Platform | Android |
+| Build rendszer | Gradle |
+| Backend / szolgáltatások | Firebase (vagy más felhőszolgáltatás) |
+| Adatbázis | Firebase Realtime Database / Firestore / vagy helyi SQLite |
+| Képek / média | Android képkezelés, képfeltöltés és letöltés (Firebase Storage, stb.) |
+| Verziókezelés | Git / GitHub |
 
 FONTOS, MINDENKÉPP OLVASD EL!
 
